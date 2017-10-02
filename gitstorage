@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CIT261</title>
+</head>
+<body>
+<h1>These are my family members!</h1>
+<p id="members"></p>
+<script>
+var fam '{ "familyMemebers" : [' +
+'{ "firstName":"Nancy" , "lastName":"Palmer" },' +
+'{ "firstName":"Addison" , "lastName":"Palmer" },' +
+'{ "firstName":"Davin" , "lastName":"Palmer" } +
+'{ "firstName":"Janey" , "lastName":"Palmer" }]}';
+
+obj = JSON.parse(fam);
+document.getElementById("members").innerHTML = "My wife is " + obj.fam[0].firstName + ", and our children from oldest to youngest, " + obj.fam[1].firstName + ", " + obj.fam[2].firstName + ", and " + obj.fam[3].firstName + ".";
+</script>
+</body>
+</html>
