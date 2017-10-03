@@ -14,6 +14,7 @@ var fam = '{ "familyMembers" : [' +
 '{ "firstName":"Davin" , "lastName":"Palmer" }, ' +
 '{ "firstName":"Janey" , "lastName":"Palmer" }]}';
 obj = JSON.parse(fam);
+document.getElementById("members").innerHTML = "My wife is " + obj.familyMembers[0].firstName + ", and our children from oldest to youngest, " + obj.familyMembers[1].firstName + ", " + obj.familyMembers[2].firstName + ", and " + obj.familyMembers[3].firstName + ".";
 </script>
 </body>
 </html>
