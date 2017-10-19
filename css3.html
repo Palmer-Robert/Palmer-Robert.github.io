@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, background 2s;
+    -moz-transition: width 2s, background 2s;
+    -o-transition: width 2s, background 2s;
+    -ms-transition: width 2s, background 2s;
+    transition: width 2s, background 2s;
+}
+
+div:hover {
+    width: 300px;
+    background: blue;
+}
+
+    div.circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: red; 
+    }
+    
+    div.circle:hover {
+        width: 400px;
+        background: black;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<h1>CSS3 Transition</h1>
+
+<div>Div 1</div>
+
+<p>Hover over the div element above, or over the div element below to see how transition works.</p>
+    
+<div class="circle" style="text-align: center">Div 2</div>
+
+</body>
+</html>
