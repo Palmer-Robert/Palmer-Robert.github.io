@@ -1,0 +1,27 @@
+body {
+    background-color: orange;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+p {
+    margin: 2%;
+    width: 50%;
+    height: 50%;
+    border: 3px dashed black;
+}
+
+p#p1 {
+    font-size: small;
+    font-weight: bolder;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: black; 
+}
+
+div#shape {
+    border-radius: 0;
+}

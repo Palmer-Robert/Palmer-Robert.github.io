@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style> 
-div {
-    width: 100px;
-    height: 100px;
-    background: red;
-    -webkit-transition: width 2s, background 2s;
-    -moz-transition: width 2s, background 2s;
-    -o-transition: width 2s, background 2s;
-    -ms-transition: width 2s, background 2s;
-    transition: width 2s, background 2s;
-}
-
-div:hover {
-    width: 300px;
-    background: blue;
-}
-
-    div.circle {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: red; 
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3</title>
+    <meta name="author" content="Robert E. Palmer">
+    <link rel="stylesheet" href="styles/transition.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     
-    div.circle:hover {
-        width: 400px;
-        background: black;
-        color: white;
-    }
-</style>
+    <script>
+        function changeBackground() {
+            document.body.style.backgroundColor = "blue";
+        }
+    </script>
+    <script>
+        function changeFont() {
+        document.getElementById("p1").style.fontSize = "64px";
+        }
+    </script>
+    <script>
+        function shape() {
+            document.getElementById("shape").style.borderRadius = "50%";
+        }
+    </script>
 </head>
 <body>
-
-<h1>CSS3 Transition</h1>
-
-<div>Div 1</div>
-
-<p>Hover over the div element above, or over the div element below to see how transition works.</p>
-    
-<div class="circle" style="text-align: center">Div 2</div>
-
+    <header>
+        <h1>Manipulating CSS Class Properties Using JavaScript</h1>
+    </header>
+    <main class="clearfix">
+        <button type="button" onclick="changeBackground()">Change the background color</button>
+        
+        <p id="p1">Hello class!</p>
+        <button onclick="changeFont()">Change the font size</button>
+        <br>
+        <br>
+        <br>
+        <div id="shape"></div><br>
+        <button onclick="shape()">Change the shape of the box</button>
+    </main>
+    <footer>
+    &copy; 2017 &star; Robert Palmer &star; <a href="http://www.byui.edu/online">BYU-I Online</a>
+    </footer>
 </body>
 </html>
