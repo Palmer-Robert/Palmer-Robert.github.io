@@ -1,0 +1,48 @@
+@media only screen and (min-width: 64em) {
+  /* Only CSS rules that need to be changed to meet the layout needs from medium to large/wide go in here */
+
+#tourscontent {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(3, auto);
+    border: 1px solid #000;
+    grid-gap: 20px;
+}
+
+.mytours {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #000;
+}
+    
+.product-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+    
+.product-menu {
+    list-style-type: none;
+    float: left;
+    color: #fff;
+    display: none;
+}
+
+.product-menu a {
+    display: block;
+    color: #bfbfbf;
+    text-align: left;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+.product-menu a:hover {
+    background-color: #111;
+}
+
+.mySpecs > li {
+    display: block;
+}
+
+}
