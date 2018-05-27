@@ -3,44 +3,129 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSS3</title>
+    <title>CIT 261 | CSS3 | Triggering with JavaScript</title>
     <meta name="author" content="Robert E. Palmer">
-    <link rel="stylesheet" href="styles/transition.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    
+    <style>
+        div#box1 {
+            background: #ff0000;
+            width: 400px;
+            height: 200px;
+        }
+        
+        div#box2 {
+            background: #f0f;
+            width: 400px;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        div#box3 {
+            background: #f0f;
+            width: 400px;
+            height: 200px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+        #box4 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
     <script>
-        function changeBackground() {
-            document.body.style.backgroundColor = "blue";
+        // This function is the trigger for the buttons below
+        function changeBG(el, clr) {
+            var elem = document.getElementById(el);
+            elem.style.transition = "background 1.0s linear 0s";
+            elem.style.background = clr;
         }
     </script>
     <script>
-        function changeFont() {
-        document.getElementById("p1").style.fontSize = "64px";
+        function slideOut(elem) {
+            var element = document.getElementById(elem);
+            element.style.transition = "width 0.5s ease-in 0s";
+            element.style.width = "0px";
+        }
+        function slideIn(elem) {
+            var element = document.getElementById(elem);
+            element.style.transition = "width 0.5s ease-in 0s";
+            element.style.width = "400px";
         }
     </script>
     <script>
-        function shape() {
-            document.getElementById("shape").style.borderRadius = "50%";
+        function fadeOut(item) {
+            var box = document.getElementById(item);
+            box.style.transition = "opacity 1.0s ease-in-out 0s";
+            box.style.opacity = 0;
         }
+        function fadeIn(item) {
+            var box = document.getElementById(item);
+            box.style.transition = "opacity 1.0s ease-in-out 0s";
+            box.style.opacity = 1;
+        }
+    </script>
+    <script>
+        function myMove() {
+            var elem = document.getElementById("box4");   
+            var pos = 0;
+            var id = setInterval(frame, 5);
+                function frame() {
+                    if (pos == 350) {
+                        clearInterval(id);
+                    } else {
+                        pos++; 
+                        elem.style.top = pos + 'px'; 
+                         elem.style.left = pos + 'px'; 
+                        }
+                    }
+                }
     </script>
 </head>
 <body>
     <header>
-        <h1>Manipulating CSS Class Properties Using JavaScript</h1>
+        <h1>Triggering CSS Animations and Transitions with Javascript</h1>
     </header>
-    <main class="clearfix">
-        <button type="button" onclick="changeBackground()">Change the background color</button>
-        
-        <p id="p1">Hello class!</p>
-        <button onclick="changeFont()">Change the font size</button>
+    <main>
+        <!-- The buttons call the javascript function -->
+        <button onclick="changeBG('box1', '#000');">Black</button>
+        <button onclick="changeBG('box1', '#6600cc');">Purple</button>
+        <button onclick="changeBG('box1', '#ff0000');">Original</button>
+        <div id="box1">Box 1</div>
         <br>
+        <button onclick="slideOut('box2');">Slide Out</button>
+        <button onclick="slideIn('box2');">Slide In</button>
+        <div id="box2">Box 2</div>
         <br>
+        <button onclick="fadeOut('box3');">Fade Out</button>
+        <button onclick="fadeIn('box3');">Fade In</button>
+        <div id="box3">Fade Out</div>
         <br>
-        <div id="shape"></div><br>
-        <button onclick="shape()">Change the shape of the box</button>
+        <button onclick="myMove()">Click Me</button>
+        <div id ="container">
+            <div id ="box4"></div>
+        </div>
     </main>
     <footer>
-    &copy; 2017 &star; Robert Palmer &star; <a href="http://www.byui.edu/online">BYU-I Online</a>
+    &copy; 2018 &star; Robert Palmer &star; <a href="http://www.byui.edu/online">BYU-I Online</a>
     </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

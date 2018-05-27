@@ -2,53 +2,26 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>My Website for Practice</title>
+	<title>CIT 261 | Mobile Application Development | Spring 2018</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <style>
-        body {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-around;
-            background: yellow;
-            color: #fff;
-            font-family: 'Source Sans Pro', sans-serif;
-        }
-        
-        header {
-            flex-grow: 1;
-        }
-        
-        #main-flex {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-around;
-            align-items: flex-start;
-        }
-    </style>
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <script src="js/xhr.js"></script>
 </head>
 <body>
     <header>
-        <img src="img/mylogo.png" alt="My site logo">
+        <h1 id="mainHeader">CIT 261: Spring 2018</h1>
     </header>
-    <nav>
+    <nav class="navbar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Tours</a></li>
-            <li><a href="#">About Us</a></li>
+            <li class="css3.html"><a href="#">CSS 3 Animation and Transition triggered by JavaScript</a></li>
+            <li class=""><a href="#">Assessment 2</a></li>
+            <li class=""><a href="#">Assessment 3</a></li>
+            <li class=""><a href="#">Assessment 4</a></li>
+            <li class=""><a href="#">Assessment 5</a></li>
+            <li class=""><a href="#">Assessment 6</a></li>
         </ul>
     </nav>
-    <div>
-        <h1>Root Inc.</h1>
-    </div>
-    <main id="main-flex">
-        <section>Section 1</section>
-        <section>Section 2</section>
-        <section>Section 3</section>
-        <article>Article</article>
-    </main>
-    <footer>
-        <p>This is my footer</p>
-    </footer>
 </body>
 </html>
