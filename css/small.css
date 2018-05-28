@@ -8,29 +8,21 @@ body {
     text-align: center;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #000;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 1em;
+    padding: 1em;
 }
 
-li a {
-    display: block;
-    color: #fff;
-    margin: 0;
-    padding: .5em 1em;
-    text-decoration: none;
+table th {
+    background-color: black;
+    color: white;
 }
 
-li a:hover {
-    background-color: #fff;
-    color: #000;
+table tr:nth-child(even) {
+    background-color: #a6a6a6;
 }
-
-
-
 
 
 

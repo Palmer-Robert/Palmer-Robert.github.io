@@ -7,6 +7,22 @@
     <meta name="author" content="Robert E. Palmer">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <style>
+        #home {
+            width: 4em;
+            height: 2em;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #000;
+            border-radius: 4px;
+            background: #00b33c;
+        }
+        
+        #home a {
+            text-decoration: none;
+            padding: 1em 0.5em 0.6em;
+            color: #fff;
+        }
+        
         div#box1 {
             background: #ff0000;
             width: 400px;
@@ -41,6 +57,18 @@
             background-color: red;
         }
     </style>
+    <script>
+        function changeHome(element, color1) {
+            var elem = document.getElementById(element);
+            elem.style.transition = "background 0.2s linear 0s";
+            elem.style.background = color1;
+        }
+        function changeHomeBack(element, color1) {
+            var elem = document.getElementById(element);
+            elem.style.transition = "background 0.2s linear 0s";
+            elem.style.background = color1;
+        }
+    </script>
     <script>
         // This function is the trigger for the buttons below
         function changeBG(el, clr) {
@@ -91,6 +119,7 @@
     </script>
 </head>
 <body>
+    <p id="home" onmouseover="changeHome('home', '#b3ffcc')" onmouseout="changeHomeBack('home', '#00b33c')"><a href="index.html">Home</a></p>
     <header>
         <h1>Triggering CSS Animations and Transitions with Javascript</h1>
     </header>
