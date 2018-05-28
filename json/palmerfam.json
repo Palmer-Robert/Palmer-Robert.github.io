@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Robert",
+        "status": "Husband",
+        "birthCity": "Oakland",
+        "birthState": "California"
+    },
+    {
+        "name": "Nancy",
+        "status": "wife",
+        "birthCity": "Show Low",
+        "birthState": "Arizona"
+    },
+    {
+        "name": "Addison",
+        "status": "Oldest daughter",
+        "birthCity": "Tempe",
+        "birthState": "Arizona"
+    },
+    {
+        "name": "Davin",
+        "status": "Son",
+        "birthCity": "Tucson",
+        "birthState": "Arizona"
+    },
+    {
+        "name": "Janey",
+        "status": "The Baby",
+        "birthCity": "Show Low",
+        "birthState": "Arizona"
+    }
+]
