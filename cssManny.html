@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Manipulation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            #nav-list {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #0000cc;
+            }
+            
+            .myList {
+                float: left;
+            }
+            
+            .myList a {
+                display: block;
+                color: #fff;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            .myList a:hover {
+                background-color: #e6e6ff;
+                color: #000;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="index.html"><img alt="My logo" src="img/myLogo.png"></a>
+        <nav>
+            <ul id="nav-list">
+                <li id="home" class="myList"><a href="index.html">Home</a></li>
+                <li id="page1" class="myList"><a href="#">Page 1</a></li>
+                <li id="page2" class="myList"><a href="#">Page 2</a></li>
+                <li id="page3" class="myList"><a href="#">Page 3</a></li>
+                <li id="page4" class="myList"><a href="#">Page 4</a></li>
+            </ul>
+        </nav>
+        <h1>Manipulating CSS with JavaScript</h1>
+        <br><br>
+        <h2 class="w3-center">Slideshow</h2>
+        <div class="w3-content w3-display-container">
+            <img class="slide" src="img/photo1.JPG" style="width:100%">
+            <img class="slide" src="img/photo2.JPG" style="width:100%">
+            <img class="slide" src="img/photo3.JPG" style="width:100%">
+            <img class="slide" src="img/photo4.JPG" style="width:100%">
+            <!-- These buttons are used to cycle forward and backward through the list of photos provided. -->
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+        </div>
+        
+        <script>
+            // Javascript to manipulate CSS
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("slide");
+              if (n > x.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                 x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+        </script>
+        <hr>
+        <script>
+            function textSize() {
+                var x = document.getElementById('para');
+                x.style.fontSize = "2em";
+            }
+            function changeBack() {
+                var x = document.getElementById('para');
+                x.style.fontSize = "1em";
+            }
+            function shadow() {
+                var y = document.getElementById('para');
+                y.style.textShadow = "5px 5px 1px #ff0000,10px 10px 1px #0000ff";
+            }
+            function reverseShadow() {
+                var y = document.getElementById('para');
+                y.style.textShadow = "none";
+            }
+        </script>
+        <!--CSS is being manipulating through javascript functions -->
+        <h4><strong>Mouse over the paragraph to see the change!!!</strong></h4>
+        <p id="para" onmouseover="shadow()" onmouseout="reverseShadow()">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><br>
+        <button type="button" onclick="textSize()">Change Text Size</button>
+        <button type="button" onclick="changeBack()">Reset Text</button>
+        <hr>
+        <br><br>
+        <fieldset>
+            <form action="">
+                First Name: <input type="text" placeholder="Enter text" id="fname"><br>
+                <button type="button" onclick="sayHi()">Submit</button>
+            </form>
+        </fieldset>
+        <div id="hello"></div>
+        <br><br>
+        <script>
+            function sayHi() {
+                var fname = document.getElementById('fname').value;
+                document.getElementById('hello').innerHTML = "<h1>Hi " + fname + "! Welcome to my page.</h1>";
+            }
+        </script>
+    </body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Technology</title>
+        <style>
+        
+        </style>
+        <script>
+        /*
+         * Input: User input items for shopping list
+         * Processing: Item is added to the list
+         * Output: Items added with the click of a button
+         */
+            function shoppingList() {
+                var li = document.createElement("li");
+                var node = document.createTextNode(document.getElementById('addList').value);
+                li.appendChild(node);
+                
+                var element = document.getElementById('shop_list');
+                element.appendChild(li);
+            }
+            
+            function deleteItem() {
+                var parent = document.getElementById('shop_list');
+                var child = document.getElementsByTagName("li");
+                parent.removeChild(child);
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1>DOM Manipulation</h1>
+        
+        <h3>My Shopping List</h3>
+        Enter list item: <input type="text" id="addList" placeholder="Example: apples, bread, etc.">
+        <button type="button" onclick="shoppingList()">Add Item</button>
+        <button type="button" onclick="deleteItem()">Delete Item</button>
+        <ul id="shop_list"></ul>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

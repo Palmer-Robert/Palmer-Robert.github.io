@@ -3,17 +3,75 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles/animation.css">
-    <title>Transition, Transform, and Animation</title>
-    
+    <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
+    <style>
+        #title {
+            border-bottom: 3px solid #cc9900;
+	        color: #996600;
+	        font-size: 30px;
+        }
+        
+        #navBar {
+            width: 200px;
+            height: 50px;
+        }
+        
+        div a {
+            margin: 0;
+            padding: 0;
+            background-color: #00b33c;
+            border: 1px solid #000;
+            border-radius: 4px;
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+        }
+        
+        div a:hover {
+            background-color: #b3ffcc;
+            color: #000;
+        }
+    </style>
+    <script>
+        function findPrime() {
+            var userInput = parseInt(document.getElementById('numbBox').value);
+            var limit = Math.sqrt(userInput);
+            var prime = true;
+            for(var i = 2; i <= limit; i++) {
+                var remainder = userInput % i;
+                if(remainder == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+            
+            var output;
+            if(prime) {
+                output = userInput + " is a prime number.";
+            }
+            else {
+                output = userInput + " is not a prime. Try again!";
+            }
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
 </head>
     <body>
-        <div class="wrapper">
-            <div class="sky"></div>
-            <div class="circle">Hello World!</div>
-            <div class="grass"></div>
-            <div class="road">
-                <div class="lines"></div>
-            </div>
-        </div>
+        <h1 id="title">CIT Loops</h1>
+        <nav>
+            <div id="navBar"><a href="index.html">Home</a></div>
+        </nav>
+        <p>Enter a number below and find out if that number is a prime number.</p>
+        Enter a number: <input type="text" id="numbBox"><br>
+        <button type="button" onclick="findPrime()">Click Me</button>
+        <div id="output"></div>
+        <br><br>
+        <hr>
+        <br><br>
+        
     </body>
+    <footer class="wrapChild footer">
+        <hr>
+        <p id="footer-text">&copy; ACME, All rights reserved. All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.</p>
+    </footer>
 </html>
