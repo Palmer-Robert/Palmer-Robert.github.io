@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="styles/animation.css">
     <title>Loops, Conditional Statements, Functions, Variables, Parameters, Arrays, Associative Arrays</title>
     <style>
-        #title {
+        .title {
             border-bottom: 3px solid #cc9900;
 	        color: #996600;
 	        font-size: 30px;
@@ -33,6 +33,7 @@
         }
     </style>
     <script>
+        // This function loops through 
         function findPrime() {
             var userInput = parseInt(document.getElementById('numbBox').value);
             var limit = Math.sqrt(userInput);
@@ -57,7 +58,7 @@
     </script>
 </head>
     <body>
-        <h1 id="title">CIT Loops</h1>
+        <h1 class="title">Loops, conditional statements, functions, variables</h1>
         <nav>
             <div id="navBar"><a href="index.html">Home</a></div>
         </nav>
@@ -68,10 +69,65 @@
         <br><br>
         <hr>
         <br><br>
+        <h1 class="title">Associative Arrays</h1>
+        <p>Fill out the form and click the submit button.</p>
+        <fieldset>
+            <form>
+                <input type="text" placeholder="first name" id="fname"><br>
+                <input type="number" placeholder="age" id="age"><br>
+                <input type="text" placeholder="city" id="city"><br>
+                <button type="button" onclick="formSubmit()">Submit</button>
+                <div id="output2"></div>
+            </form>
+        </fieldset>
+        <script>
+            function formSubmit() {
+            // Associative Arrays
+                var fname = document.getElementById('fname').value;
+                var age = parseInt(document.getElementById('age').value);
+                var city = document.getElementById('city').value;
+                document.getElementById('output2').innerHTML = "Your associative array is: {" + fname + ", " + age + ", " + city + "}";
+            }
+        </script>
+        <hr>
+        <!-- This code needs to be written -->
+        <h1 class="title">Parameters, arrays</h1>
+        <p>Click the button</p>
         
+        <button type="button" onclick="buildArray()">Click It!</button>
+        <div id="demo"></div>
+        <script>
+            function buildArray() {
+                var list, text, i;
+                
+                list = ["Apple", "oranges", "peaches", "blueberries"];
+                text = "<ul>";
+                for(var i = 0; i <= list.length; i++) {
+                    text += "<li>" + list[i] + "</li>";   
+                }
+                text += "</ul>";
+                document.getElementById("demo").innerHTML = text;
+            }
+        </script>
     </body>
     <footer class="wrapChild footer">
         <hr>
         <p id="footer-text">&copy; ACME, All rights reserved. All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.</p>
     </footer>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

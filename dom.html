@@ -5,37 +5,25 @@
         <style>
         
         </style>
-        <script>
-        /*
-         * Input: User input items for shopping list
-         * Processing: Item is added to the list
-         * Output: Items added with the click of a button
-         */
-            function shoppingList() {
-                var li = document.createElement("li");
-                var node = document.createTextNode(document.getElementById('addList').value);
-                li.appendChild(node);
-                
-                var element = document.getElementById('shop_list');
-                element.appendChild(li);
-            }
-            
-            function deleteItem() {
-                var parent = document.getElementById('shop_list');
-                var child = document.getElementsByTagName("li");
-                parent.removeChild(child);
-                
-            }
-        </script>
+        <script src="js/myScript.js"></script>
     </head>
     <body>
         <h1>DOM Manipulation</h1>
-        
+        <p id="explanation">To add to the shopping list, fill in the item and click the <strong>add item</strong> button. To manipulate the paragraphs below, click the buttons and see what happens.</p>
         <h3>My Shopping List</h3>
         Enter list item: <input type="text" id="addList" placeholder="Example: apples, bread, etc.">
         <button type="button" onclick="shoppingList()">Add Item</button>
-        <button type="button" onclick="deleteItem()">Delete Item</button>
         <ul id="shop_list"></ul>
+        
+        <h3>Paragraph manipulated by the DOM!</h3>
+        <div id="myDiv">
+        <p id="p1"><strong>Paragraph 1: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p id="p2"><strong>Paragraph 2: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p id="p3"><strong>Paragraph 3: </strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <button type="button" onclick="insertPara()">Insert Before</button>
+        <button type="button" onclick="removePara()">Remove Para 3</button>
+        <button type="button" onclick="replaceMe()">Replace Para 2</button>
     </body>
 </html>
 
