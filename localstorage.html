@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Storage</title>
+    <style>
+        #store, #get {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function localDemo() {
+            if(typeof(Storage) !== "Undefined") {
+                // Store item
+                localStorage.setItem("firstname", "Robert");
+                
+                // Retrieve item
+                document.getElementById("result").innerHTML = "Hi, " + localStorage.getItem('firstname');
+            } else {
+                document.getElementById("result").innerHTML = "Try it again!";
+            }
+        }
+    </script>
+    <button type="button" onclick="localDemo()">Try Me</button>
+    <div id="result"></div>
+    <hr>
+    <script>
+        // JavaScript for name storage
+        function storeNames() {
+            var key = document.getElementById('key').value;
+            var value = document.getElementById('value').value;
+            localStorage.setItem(key, value);
+            
+            document.getElementById('store').innerHTML = key + ", " + value;
+        }
+    </script>
+    <h1>Local Storage</h1>
+    <h4>Names storage</h4>
+    Enter a key: <input type="text" id="key"><br>
+    Enter a value: <input type="text" id="value"><br>
+    <button type="button" onclick="storeNames()">Store</button>
+    <div id="store"></div>
+    <hr>
+    <h4>Retrieve storage</h4><input type="text" id="inputName2"><br>
+    <button type="button" onclick="retrieveNames()">Retrieve</button>
+    <div id="get"></div>
+</body>
+</html>

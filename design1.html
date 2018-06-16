@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</title>
+    <style>
+        #field {
+            width: 50%;
+            border-radius: 5px;
+        }
+        
+        #myBox2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+
+<body id="myBody" onload="bodyChange('myBody', '#8533ff')">
+    <script>
+        /*************************************************************
+        This script is to change the color of the background of the
+        body, gradually.
+        ***********************************************************/
+        function bodyChange(el, clr) {
+            var element = document.getElementById(el);
+            element.style.transition = "background 8.0s linear 0s";
+            element.style.background = clr;
+        }
+    </script>
+    <h1 id="introHeader">CIT 261</h1>
+    <p id="intro">As you may have noticed, the background color changed when the page loaded. Below, you will find more examples of <strong>Transitions, Animations, and Transforms</strong> being triggered by JavaScript.</p>
+    <!-- Transition -->
+    <h3 id="header1">Designing, Defining, and Triggering CSS3 Transitions without Custom Libraries (Thought Library)</h3>
+
+    <div id="myBox">
+        <fieldset id="field" onmouseover="transition3('field')" onmouseout="transition4('field')">
+            <form action="">
+                Enter Firstname: <br>
+                <input type="text" name="firstName" id="fname" class="change" onmouseover="changeColor('change', '#ffff00')"><br><br> 
+                Enter lastname: <br>
+                <input type="text" name="lastName" id="lname" class="change" onmouseover="changeColor('change', '#ffff00')"><br><br>
+                <button id="btn" onclick="transition1()">Submit</button>
+            </form>
+        </fieldset>
+        <button type="button" onclick="transition2('field')" id="border">Border Radius</button>
+        <button type="button" onclick="transition5('field')">Width</button>
+        <script>
+            /**************************************************
+            The functions are attached to the buttons
+            **************************************************/
+            function transition1() {
+                var first = document.getElementById('fname').value;
+                var last = document.getElementById('lname').value;
+
+                alert("Hello, " + first + " " + last + ". Welcome to my page!");
+            }
+            // Change the border radius of the fieldset
+            function transition2(element) {
+                var elem = document.getElementById(element);
+                elem.style.transition = "borderRadius 2.0s linear 0s";
+                elem.style.borderRadius = "35px";
+            }
+            // Button 2 to change the background of the form.
+            function transition3(element) {
+                var el = document.getElementById(element);
+                el.style.transition = "opacity 0.5s linear 0s";
+                el.style.opacity = .5;
+            }
+            function transition4(element) {
+                var el = document.getElementById(element);
+                el.style.transition = "opacity 0.5s linear 0s";
+                el.style.opacity = 1;
+            }
+            // Changing the width at the click of a button
+            function transition5(btn) {
+                var element = document.getElementById(btn);
+                element.style.transition = "width 2.0s linear 0s";
+                element.style.width = "25%";
+            }
+        </script>
+    </div>
+
+    <!-- Transform -->
+    <hr style="">
+    <div id="flipper">
+    <h3 id="header2">Designing, Defining, and Triggering CSS3 Transforms without Custom Libraries (Thought Library)</h3>
+    </div>
+    <button type="button" onclick="spin('flipper')">Spin Header</button>
+    <script>
+        /**********************************************************
+        The function below will manipulate the CSS using transforms
+        triggered by JavaScript
+        ***********************************************************/
+        function spin(x) {
+            var el = document.getElementById(x);
+            el.style.transition = "transform 2.0s linear 0s";
+            el.style.transform = "skewY(180deg)";
+        }
+    </script>
+
+    <!-- Animation -->
+    <hr style="">
+    <h3 id="header3">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library)</h3>
+    <p><strong>To Be Developed....</strong></p>
+    <div id="myBox2"></div>
+    <script>
+        /*********************************************************
+        JavaScript triggering an animation 
+        *********************************************************/
+        // To be developed
+        var id = setInterval(moveAcross, 5);
+        
+        function moveAcross() {
+            if(/*test for finshed*/) {
+               clearInterval(id);
+               } else {
+                   /*code to change the element style*/
+               }
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
