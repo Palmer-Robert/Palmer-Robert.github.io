@@ -7,9 +7,26 @@
     <meta name="author" content="Robert E. Palmer">
     </head>
     <body>
-        <header>
-        <button type="button" onclick="myFam()">Meet my family</button>
+        <button type="button" id="myBtn">Meet my family</button>
         <div id="family"></div>
-        </header>
+        <script>/* This is the beginning of Javascript */
+            var container = document.getElementById('family');
+            var btn = document.getElementById('myBtn');
+
+            btn.addEventLister("click", function() {
+                var myRequest = new XMLHttpRequest();
+                myRequest.open("GET", "json/palmerfam.json", true);
+                myRequest.onload = function() {
+                    var myData = JSON.parse(myRequest.responseText);
+                    addHTML(myData);
+                };
+                myRequest.send();
+            });
+
+            function addHTML(data) {
+                var myString = "Testing";
+                container.insertAdjacentHTML("beforeend", myString);
+            }
+        </script><!-- This is the end of Javascript -->
     </body>
 </html>

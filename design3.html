@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: pink;
+        }
+        #animate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: orange;
+            border-radius: 50%;
+        }
+    </style>
+    <script src="js/animation.js"></script>
+</head>
+<!-- This is the view that user actually see -->
+<body>
+  <p>Click the buttons below. Each one is coded to be indivdually animated. </p>
+   <p>
+      <!-- Each button is set to be clicked in order to see each animation. -->
+       <button type="button" onclick="myRight()">Right</button>
+       <button type="button" onclick="moveDown()">Down</button>
+       <button type="button" onclick="moveLeft()">Left</button>
+       <button type="button" onclick="moveUp()">Up</button>
+   </p>
+    <div id ="container">
+      <div id ="animate"></div>
+    </div>
+    <br><br><br>
+    <button onclick="window.location = 'index.html'">Home</button>
+</body>
+</html>

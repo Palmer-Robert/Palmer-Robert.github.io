@@ -10,11 +10,20 @@
             border-radius: 5px;
         }
         
-        #myBox2 {
+        .box {
             width: 200px;
             height: 200px;
             border: 1px solid #000;
             background-color: #ff0000;
+        }
+        
+        .box.horizTranslate {
+            -webkit-transition: 3s;
+            -moz-transition: 3s;
+            -ms-transition: 3s;
+            -o-transition: 3s;
+            transition: 3s;
+            margin-left: 50% !important;
         }
     </style>
 </head>
@@ -106,21 +115,28 @@
     <hr style="">
     <h3 id="header3">Designing, Defining, and Triggering CSS3 Animations without Custom Libraries (Thought Library)</h3>
     <p><strong>To Be Developed....</strong></p>
-    <div id="myBox2"></div>
+    
+    <h3>Push Play</h3>
+    <div class='box'></div> 
+    <button class='toggleButton' value='play'>Play</button>
     <script>
         /*********************************************************
         JavaScript triggering an animation 
         *********************************************************/
-        // To be developed
-        var id = setInterval(moveAcross, 5);
-        
-        function moveAcross() {
-            if(/*test for finshed*/) {
-               clearInterval(id);
-               } else {
-                   /*code to change the element style*/
-               }
-        }
+        var boxOne = document.getElementsByClassName('box')[0]; 
+            
+            document.getElementsByClassName('toggleButton')[0].onclick = function() { 
+                if(this.innerHTML === 'Play') {
+                    this.innerHTML = 'Pause';
+                    boxOne.classList.add('horizTranslate'); 
+                } else { 
+                    this.innerHTML = 'Play';
+                    var computedStyle = window.getComputedStyle(boxOne),
+                        marginLeft = computedStyle.getPropertyValue('margin-left');
+                    boxOne.style.marginLeft = marginLeft;
+                    boxOne.classList.remove('horizTranslate');
+                }
+            }
     </script>
 </body>
 

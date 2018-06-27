@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CIT 261 | Video</title>
+    </head>
+    <body>
+       <h1 id="myHeader">CIT 261 | Video</h1>
+       <h3 id="header1">Video number 1</h3>
+        <video src="video/thelastdays.mp4" id="myVideo" width="400" height="200" controls></video>
+        <p>
+        <button onclick="makeMute()">Mute</button>
+        <button onclick="bringSound()">Unmute</button>
+        </p>
+        <script>
+            var sound = document.getElementById('myVideo');
+            
+            function makeMute() {
+                sound.volume = 0.0;
+            }
+            
+            function bringSound() {
+                sound.volume = 1.0;
+            }
+        </script>
+        <h3 id="header2">Video number 2</h3>
+        <video src="video/thelastdays.mp4" id="myVideo2" width="400" height="200"></video>
+        <p>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="makeMeBig()">Bigger</button>
+        <button onclick="makeMeSmall()">Smaller</button>
+        </p>
+        <script>
+            var playMe = document.getElementById('myVideo2');
+            
+            function playPause() {
+                if(playMe.paused){
+                    playMe.play();
+                } else
+                    playMe.pause();
+            }
+            
+            function makeMeBig() {
+                playMe.width = 560;
+                playMe.height = 300;
+            }
+            
+            function makeMeSmall() {
+                playMe.width = 200;
+            }
+            
+            /* Function to reload page and reset fields */
+            function resetPage() {
+                location.reload();
+            }
+        </script>
+        <button onclick="window.location.href = 'index.html'">Home</button>
+        <button onclick="window.location.href = 'tagsCanvas.html'">Canvas</button>
+        <button onclick="window.location.href = 'audio.html'">Audio</button>
+        <button onclick="resetPage()">Reset</button>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
