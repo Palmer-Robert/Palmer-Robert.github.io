@@ -3,19 +3,50 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AJAX XMKHttpRequest | CIT 261</title>
+        <title>AJAX XMKHttpRequest | JSON | CIT 261</title>
         <meta name="author" content="Robert E. Palmer">
         <meta name="description" content="page description placeholder">
         <script src="json/palmerfam.json"></script>
-        <script src="js/xhr.js"></script>
         <style>
-        
+            #myBtn {
+                width: 10em;
+                height: 2em;
+                background: #000;
+                color: #fff;
+                border-radius: .5em;
+            }
+            
+            #myBtn:hover {
+                background: #e6e6e6;
+                color: #000;
+            }
+            
+            #resetBtn {
+                width: 10em;
+                height: 2em;
+                background: #000;
+                color: #fff;
+                border-radius: .5em;
+            }
+            
+            #resetBtn:hover {
+                background: #e6e6e6;
+                color: #000;
+            }
         </style>
     </head>
     <body>
-        <div id="demo"></div>
-        <input type="reset" value="Reset">
-        <button type="button" onclick="window.location.href='index.html'">Home</button>
-        <p id="content"></p>
+        <!-- This button points to the home page -->
+        <button id="myBtn" type="button" onclick="window.location.href='index.html'">Home</button>
+        <!-- Header for the button and header information -->
+        <header>
+            <h1 id="myHeader">JSON and AJAX combination</h1>
+            <button id="fetch">Meet the family</button>
+        </header>
+        <!-- Div is in place to be a placeholder for the output -->
+        <div id="fam-intro"></div>
+        <!-- Reset the page with the reset button -->
+        <button id="resetBtn" onclick="reload()">Reset</button>
+        <script src="js/xhr.js"></script>
     </body>
 </html>

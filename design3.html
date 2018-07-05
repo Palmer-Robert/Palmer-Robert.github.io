@@ -10,11 +10,27 @@
             position: relative;
             background: pink;
         }
+        
         #animate {
             width: 50px;
             height: 50px;
             position: absolute;
             background: orange;
+            border-radius: 50%;
+        }
+        
+        #container2 {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: #b30000;
+        }
+        
+        #animate2 {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: #ffff00;
             border-radius: 50%;
         }
     </style>
@@ -34,6 +50,34 @@
       <div id ="animate"></div>
     </div>
     <br><br><br>
-    <button onclick="window.location = 'index.html'">Home</button>
+    <h2>Touch Screen Events</h2>
+    <p>Touch the circle inside the box to trigger <strong>onTouchStart</strong> event. The circle will change upon touching it.</p>
+    <p>The container box will disappear once your finger is lifted off of the box, triggering the <strong>onTouchEnd</strong> event.</p>
+    <div id="container2" ontouchend="slideOut('container2')">
+        <div id="animate2" ontouchstart="colorMe('animate2', '#000')"></div>
+    </div>
+    <p>
+    <button onclick="window.location.href='index.html'">Home</button>
+    <button onclick="location.reload()">Reset</button>
+    </p>
+    
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

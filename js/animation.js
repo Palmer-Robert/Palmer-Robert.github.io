@@ -58,8 +58,21 @@ function moveUp() {
     }
 }
 
+/**********************************************************************************
+Touch screen manipulation
+**********************************************************************************/
 
+function colorMe(el, clr) {
+    var element = document.getElementById(el);
+    element.style.transition = "background 3.0s linear 0s";
+    element.style.background = clr;
+}
 
+function slideOut(elem) {
+            var element = document.getElementById(elem);
+            element.style.transition = "width 0.5s ease-in 0s";
+            element.style.width = "0px";
+        }
 
 
 

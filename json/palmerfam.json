@@ -1,31 +1,36 @@
 [
     {
+        "image": "photo4.JPG",
         "name": "Robert",
         "status": "Husband",
         "birthCity": "Oakland",
         "birthState": "California"
     },
     {
+        "image": "wife.JPG",
         "name": "Nancy",
         "status": "wife",
         "birthCity": "Show Low",
         "birthState": "Arizona"
     },
     {
+        "image": "addison.JPG",
         "name": "Addison",
         "status": "Oldest daughter",
         "birthCity": "Tempe",
         "birthState": "Arizona"
     },
     {
+        "image": "davin.JPG",
         "name": "Davin",
         "status": "Son",
         "birthCity": "Tucson",
         "birthState": "Arizona"
     },
     {
+        "image": "janey.JPG",
         "name": "Janey",
-        "status": "The Baby",
+        "status": "Baby",
         "birthCity": "Show Low",
         "birthState": "Arizona"
     }
