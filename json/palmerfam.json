@@ -1,34 +1,34 @@
 [
     {
-        "image": "photo4.JPG",
+        "image": "https://palmer-robert.github.io/img/photo4.JPG",
         "name": "Robert",
         "status": "Husband",
         "birthCity": "Oakland",
         "birthState": "California"
     },
     {
-        "image": "wife.JPG",
+        "image": "https://palmer-robert.github.io/img/wife.JPG",
         "name": "Nancy",
         "status": "wife",
         "birthCity": "Show Low",
         "birthState": "Arizona"
     },
     {
-        "image": "addison.JPG",
+        "image": "https://palmer-robert.github.io/img/addison.JPG",
         "name": "Addison",
         "status": "Oldest daughter",
         "birthCity": "Tempe",
         "birthState": "Arizona"
     },
     {
-        "image": "davin.JPG",
+        "image": "https://palmer-robert.github.io/img/davin.JPG",
         "name": "Davin",
         "status": "Son",
         "birthCity": "Tucson",
         "birthState": "Arizona"
     },
     {
-        "image": "janey.JPG",
+        "image": "https://palmer-robert.github.io/img/janey.JPG",
         "name": "Janey",
         "status": "Baby",
         "birthCity": "Show Low",
