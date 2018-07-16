@@ -4,17 +4,108 @@
         <meta charset="UTF-8">
         <title>Javascript Touch Events</title>
         <style>
-            #signature {
-                width: 100%;
-                height: 150px;
-                border: 1px solid #000;
+            #myCanvas {
+                border: 10px solid #bf80ff;
             }
         </style>
     </head>
     <body>
-        <div id="signature"></div>
+        <p>
+            <button id="home" onclick="window.location.href='index.html'">Home</button>
+            <button onclick="location.reload()">Reset</button>
+        </p>
+        <p id="para1" ontouchstart="showMeVideo()"><strong>Paragraph 1:</strong> Touch this paragraph to <strong>OPEN & PLAY</strong> Elder Dale G. Renlund of the Twelve Apostles.</p>
+        <p id="para2" ontouchend="hideMe()"><strong>Paragraph 2:</strong> Touch this paragraph to <strong>CLOSE</strong> this video. Audio will continue to play unless the page is reset.</p>
+        <div id="myVideo"></div>
+        <hr>
+        <canvas id="myCanvas" width="500" height="500"></canvas>
         <script>
+            // Beginning of manipulation of the video
+            function showMeVideo() {
+                document.getElementById('myVideo').innerHTML = "<video src='video/elderRenlund2018.mp4' id='renlund' width='400' height='200' controls autoplay></video>";
+            }
+            
+            function hideMe() {
+                var btn = document.getElementById('myVideo');
+                btn.style.display = "none";
+            }
+            // End of video functions
+            function hello() {
+                var name = document.getElementById('fnameInput').value;
+                document.getElementById('para3').innerHTML = "Welcome <strong>" + name + "</strong>. Enjoy the ride";
+            } /* End of the paragraph section */
+            
+            /************************************************************
+            Following the mouse and finger
+            ************************************************************/
+            var canvas = document.getElementById('myCanvas')
+            var c = canvas.getContext('2d');
+            
+            var canvasPos = getPosition(canvas);
+            // This is where the mouse positions are put into variables
+//            var mouseX = 0;
+//            var mouseY = 0;
+            
+            // Finger position
+            var touchX = 0;
+            var touchY = 0;
+            
+            // This is where the touchmove is called through the event listener
+            canvas.addEventListener("touchmove", setTouchPosition, false);
+            
+            // This function sets the mouse position
+//            function setMousePosition(e) {
+//                mouseX = e.clientX - canvasPos.x;
+//                mouseY = e.clientY - canvasPos.y;
+//            }
+            
+            function setTouchPosition(event) {
+                touchX = event.clientX - canvasPos.x;
+                touchY = event.clientY - canvasPos.y;
+            }
+            
+            // Update function begin
+            // Funtion to draw the circle
+            function update() {
+                c.clearRect(0, 0, canvas.width, canvas.height);
+                
+                
+                c.beginPath();
+                c.arc(touchX, touchY, 50, 0, 2 * Math.PI, true);
+                c.fillStyle = "#9933ff";
+                c.fill();
+                
+                requestAnimationFrame(update);
+            }
+            update();// Update function end
+            
+            
+            // Pointing to the exact mouse position function
+            function getPosition(el) {
+                var xPos = 0;
+                var yPos = 0;
+                
+                // Loop to follow the mouse
+                while(el) {
+                    xPos += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+                    yPos += (el.offsetTop - el.scrollTop + el.clientTop);
+                    el = el.offsetParent;
+                }
+                return {
+                  x: xPos,
+                  y: yPos
+                };
+            }
+            
             
         </script>
     </body>
 </html>
+
+
+
+
+
+
+
+
